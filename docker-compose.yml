@@ -1,0 +1,26 @@
+version: '3.4'
+volumes:
+  tensorboard_logs:
+    driver: local
+services:
+  tensorboard:
+    image: activeeon/tensorboard
+    volumes:
+      - tensorboard_logs:/logs
+    ports:
+      - "6006:6006"
+
+  environment:
+    build:
+      context: .
+      dockerfile: ./docker/cfavorita_env/dockerfile
+      target: environment
+    env_file:
+      - ./docker/credentials.env
+    privileged: true
+    devices:
+      - /dev/kfd
+      - /dev/dri
+    volumes:
+      - .:/root/cFavorita
+      - /root/cFavorita/.vscode

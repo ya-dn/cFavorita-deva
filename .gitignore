@@ -1,0 +1,49 @@
+# IDEs folders
+.idea
+.vscode
+
+# Data
+*.csv
+data
+*.zip
+
+# Virtual environment
+.venv
+
+
+# Garbage
+__pycache__
+*.pyc
+.DS_Store
+
+# Terraform deploy scriots
+terraform/*
+!terraform/*.tf
+!terraform/*.json
+*.tfevents*
+
+# Machine specific settings
+settings.json
+
+# Casual todo lists
+*.todo
+
+# Logging folders
+logs/*
+!logs/.gitkeep
+
+# Model serialization folder
+models/*
+!models/.gitkeep
+
+# Exclude machine-specific settings
+settings.json
+
+# Weights and biases tool files
+wandb/*
+
+# Credentials
+docker/credentials.env
+
+# Image conversions
+*-eps-converted-to.pdf
